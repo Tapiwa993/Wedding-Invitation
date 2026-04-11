@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapiwa & Tatenda | 26.12.2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --nude-light: #F5EBE0; --nude-dark: #AF8F6F; --text: #5E4B3C; }
+        body { font-family: 'Poppins', sans-serif; background-color: var(--nude-light); color: var(--text); scroll-behavior: smooth; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .floating-icon { position: fixed; pointer-events: none; opacity: 0.5; z-index: 0; animation: floatUp 8s linear infinite; }
+        @keyframes floatUp {
+            0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.5; }
+            90% { opacity: 0.5; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
+        }
+        .photo-card { background: white; padding: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border-radius: 2px; transform: rotate(-1deg); transition: 0.3s; }
+        .photo-card:nth-child(even) { transform: rotate(1.5deg); }
+        .photo-card:hover { transform: rotate(0deg) scale(1.02); z-index: 10; }
+        .nude-gradient { background: linear-gradient(180deg, rgba(245,235,224,1) 0%, rgba(227,213,202,1) 100%); }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-white/90 backdrop-blur-md px-8 py-4 rounded-full shadow-2xl z-50 flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold border border-white/50">
+        <a href="#home" class="hover:text-[#AF8F6F]">Invite</a>
+        <a href="#story" class="hover:text-[#AF8F6F]">Story</a>
+        <a href="#rsvp" class="hover:text-[#AF8F6F]">RSVP</a>
+        <a href="#location" class="hover:text-[#AF8F6F]">Venue</a>
+        <a href="#gifts" class="hover:text-[#AF8F6F]">Gifts</a>
+    </nav>
+
+    <!-- PAGE 1: INVITATION -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center p-6 text-center nude-gradient">
+        <div class="relative z-10">
+            <span class="uppercase tracking-[0.5em] text-[10px] mb-4 block opacity-60">Save The Date</span>
+            <h1 class="text-5xl md:text-7xl mb-4 text-[#4A3728]">Tapiwa & Tatenda</h1>
+            <p class="italic text-xl mb-10 opacity-80">Are uniting in marriage</p>
+            
+            <div class="w-72 h-96 mx-auto mb-10 rounded-t-full overflow-hidden border-[12px] border-white shadow-2xl">
+                <img src="https://i.postimg.cc/GtncGn8S/Main_Cover_Page.jpg" class="w-full h-full object-cover" alt="Tapiwa and Tatenda">
+            </div>
+
+            <div class="space-y-2">
+                <h2 class="text-3xl font-light tracking-widest uppercase">26 December 2026</h2>
+                <p class="text-lg tracking-[0.1em]">Mutare, Zimbabwe</p>
+            </div>
+
+            <div class="mt-8 py-4 px-6 bg-white/30 backdrop-blur-sm inline-block rounded-2xl border border-white/50">
+                <p class="text-[11px] uppercase tracking-widest font-bold mb-1">Dress Code: Smart Casual</p>
+                <p class="italic text-xs opacity-70">"In any shade of Nude — reflecting the warmth of our love"</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 2: LOVE STORY -->
+    <section id="story" class="py-24 px-6 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl text-center mb-4">Our Love Story</h2>
+            <p class="text-center italic opacity-60 mb-16">From varsity halls to the wonders of the world...</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
+                <div class="photo-card">
+                    <img src="https://i.postimg.cc/qqHkyHhb/Humble_beginings.jpg" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 italic text-sm text-center">Humble Beginnings: Where our hearts first found their home.</p>
+                </div>
+
+                <div class="photo-card md:mt-16">
+                    <img src="https://i.postimg.cc/VvPYnP0w/Varsity_Days.jpg" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 italic text-sm text-center">Varsity Days: Building a foundation of friendship and dreams.</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="https://i.postimg.cc/rs28x20B/Travel_Buddies.jpg" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 italic text-sm text-center">Travel Buddies: Our love has no borders.</p>
+                </div>
+
+                <div class="photo-card md:mt-16">
+                    <img src="https://i.postimg.cc/5yWxLWYs/Grande_Familia_Barcelona.jpg" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 italic text-sm text-center">Barcelona: Under the spires of the Sagrada Família.</p>
+                </div>
+
+                <div class="photo-card">
+                    <img src="https://i.postimg.cc/fyQwmQtr/Miracle_Garden.jpg" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 italic text-sm text-center">Miracle Garden: Blooming together in the desert sun.</p>
+                </div>
+
+                <div class="photo-card md:mt-16">
+                    <img src="https://i.postimg.cc/prM2zMh4/Sea_Diving.jpg" class="w-full h-64 object-cover rounded-sm">
+                    <p class="mt-4 italic text-sm text-center">Diving deep into life's greatest adventures.</p>
+                </div>
+
+                <div class="photo-card md:col-span-2 max-w-lg mx-auto !rotate-0 border-2 border-[#AF8F6F]">
+                    <img src="https://i.postimg.cc/SRbyCb2P/Proposal.jpg" class="w-full h-80 object-cover rounded-sm">
+                    <p class="mt-4 font-bold text-center uppercase tracking-widest text-[#AF8F6F]">The Big Moment: She said YES!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAGE 3: RSVP -->
+    <section id="rsvp" class="min-h-screen py-24 px-6 flex flex-col items-center justify-center bg-[#F5EBE0]">
+        <div class="max-w-md w-full bg-white p-10 rounded-[3rem] shadow-2xl border border-white relative">
+            <h2 class="text-4xl text-center mb-2">Join Our Day</h2>
+            <p class="text-center text-[10px] uppercase tracking-[0.2em] text-gray-400 mb-10">Kindly RSVP by Oct 1st, 2026</p>
+            
+            <form action="https://formspree.io/f/mjgpnrvn" method="POST" id="rsvpForm" class="space-y-5">
+                <div>
+                    <label class="text-[10px] uppercase font-bold text-[#AF8F6F] ml-2">Main Guest Name</label>
+                    <input type="text" name="Main_Guest_Name" placeholder="Full Name" class="w-full p-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-100 focus:ring-2 focus:ring-[#AF8F6F] outline-none transition-all" required>
+                </div>
+
+                <div id="additionalGuests" class="space-y-4"></div>
+
+                <button type="button" onclick="addGuestInput()" class="w-full py-3 border-2 border-dashed border-gray-200 rounded-2xl text-[10px] font-bold text-gray-400 hover:bg-gray-50 transition-all uppercase tracking-widest">
+                    + Click to Add Guest (Up to 9)
+                </button>
+
+                <button type="submit" class="w-full py-5 bg-[#4A3728] text-white rounded-2xl font-bold shadow-xl hover:bg-[#AF8F6F] transition-all uppercase tracking-[0.2em] text-xs">
+                    Send RSVP
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- PAGE 4: LOCATION -->
+    <section id="location" class="py-24 px-6 text-center bg-white">
+        <h2 class="text-4xl mb-4">The Venue</h2>
+        <p class="mb-10 italic opacity-70">Mutare, Zimbabwe — A place of beauty for our union.</p>
+        <div class="w-full max-w-5xl mx-auto h-[500px] rounded-[2rem] overflow-hidden shadow-2xl border-[10px] border-[#F5EBE0]">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120306.90483838385!2d32.59367588392157!3d-18.9711894474753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x192d6e04d412e8c5%3A0xc3b8392764952011!2sMutare%2C%20Zimbabwe!5e0!3m2!1sen!2sus!4v1715874000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- PAGE 5: GIFTS -->
+    <section id="gifts" class="min-h-screen py-24 px-6 text-center bg-[#4A3728] text-[#F5EBE0] flex flex-col justify-center relative overflow-hidden">
+        <div class="max-w-2xl mx-auto relative z-10">
+            <img src="https://i.postimg.cc/vTwQfwgP/Greece.jpg" class="w-32 h-32 mx-auto rounded-full object-cover border-4 border-[#AF8F6F] mb-8 shadow-2xl">
+            <h2 class="text-4xl mb-8">Our Next Adventure</h2>
+            <p class="italic text-lg leading-relaxed opacity-80 mb-12 px-4">
+                "Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, a contribution to our 'New Adventure Fund' would help us kickstart our life together. We are dreaming of exploring even more of the world as Mr. & Mrs."
+            </p>
+            <div class="inline-block p-8 border border-[#AF8F6F]/50 rounded-[2rem] bg-white/5 backdrop-blur-sm">
+                <p class="text-[10px] uppercase tracking-[0.3em] mb-4 opacity-50">Preferred Gifting</p>
+                <p class="font-bold text-xl tracking-wide">Honeymoon Fund Box at the Venue</p>
+                <p class="text-sm mt-2 opacity-60">Or reach out to Tapiwa for digital details</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ADMIN FOOTER -->
+    <footer class="py-12 text-center bg-[#4A3728] border-t border-white/5">
+        <button onclick="adminAccess()" class="text-[9px] uppercase tracking-[0.4em] text-white/20 hover:text-white/100 transition-all">Guest List Admin</button>
+    </footer>
+
+    <script>
+        // Floating Hearts & Roses
+        function createEmoji() {
+            const emojis = ['❤', '✿', '❣', '🌸'];
+            const e = document.createElement('div');
+            e.classList.add('floating-icon');
+            e.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+            e.style.left = Math.random() * 100 + 'vw';
+            e.style.fontSize = (Math.random() * 20 + 10) + 'px';
+            e.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            document.body.appendChild(e);
+            setTimeout(() => e.remove(), 8000);
+        }
+        setInterval(createEmoji, 1200);
+
+        // Add Guest Logic
+        let guestCount = 0;
+        function addGuestInput() {
+            if(guestCount < 9) {
+                guestCount++;
+                const div = document.createElement('div');
+                div.className = "animate-fade-in";
+                div.innerHTML = `
+                    <label class="text-[10px] uppercase font-bold text-[#AF8F6F] ml-2">Additional Guest ${guestCount}</label>
+                    <input type="text" name="Additional_Guest_${guestCount}" placeholder="Guest Name" class="w-full p-4 bg-gray-50 rounded-2xl border-none ring-1 ring-gray-100 outline-none">
+                `;
+                document.getElementById('additionalGuests').appendChild(div);
+            } else {
+                alert("Maximum of 9 additional guests allowed.");
+            }
+        }
+
+        // Admin Access Logic
+        function adminAccess() {
+            const pass = prompt("Enter Admin Password:");
+            if(pass === "0086") {
+                // Takes you to your Formspree Dashboard
+                window.location.href = "https://formspree.io/forms/mjgpnrvn/submissions";
+            } else {
+                alert("Incorrect Password.");
+            }
+        }
+    </script>
+</body>
+</html>
