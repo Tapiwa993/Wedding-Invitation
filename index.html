@@ -1,93 +1,329 @@
-<!-- PAGE 3: OUR STORY (ALL 16 PHOTOS RESTORED) -->
-    <section id="story" class="py-32 px-6 bg-white/40">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl text-center mb-6" data-aos="fade-up">Our Story</h2>
-            <p class="text-center italic opacity-60 mb-20 max-w-2xl mx-auto" data-aos="fade-up">
-                "From a simple 'Hello' to 'I Do'—here’s a glimpse into the chapters that made us."
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tapiwa & Tatenda | 26.12.2026</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root { 
+            --nude-light: #F8F1EA; 
+            --nude-mid: #E3D5CA; 
+            --nude-dark: #D5BDAF; 
+            --sage: #8A9A5B;
+            --forest: #2D4F1E;
+            --accent: #604D3F; 
+        }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #F8F1EA 0%, #E3D5CA 100%); color: var(--accent); scroll-behavior: smooth; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; }
+        .script-font { font-family: 'Dancing Script', cursive; }
+        
+        .petal { position: fixed; top: -10%; user-select: none; pointer-events: none; z-index: 99; animation: fall linear forwards; }
+        @keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }
+        
+        .glass-card { background: rgba(255, 255, 255, 0.4); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.6); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .premium-btn { background: var(--accent); color: #F8F1EA; transition: all 0.4s ease; border: none; cursor: pointer; }
+        .premium-btn:hover { transform: translateY(-2px); background: #4A3728; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        
+        .photo-card { background: white; padding: 10px; border-radius: 4px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); transition: 0.3s; height: fit-content; }
+        .photo-card:hover { transform: scale(1.02); z-index: 5; }
+        
+        .timer-box { background: rgba(96, 77, 63, 0.05); padding: 12px; border-radius: 15px; min-width: 70px; }
+        .swatch { width: 30px; height: 30px; border-radius: 50%; border: 2px solid white; display: inline-block; }
+
+        .copy-toast { 
+            position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); 
+            background: #4A3728; color: white; padding: 12px 24px; 
+            border-radius: 50px; display: none; z-index: 1000; font-size: 10px; 
+            font-weight: bold; letter-spacing: 0.1em;
+        }
+        .fade-in { animation: fadeIn 0.5s ease-in forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+    </style>
+</head>
+<body>
+
+    <div id="toast" class="copy-toast uppercase">Details Copied!</div>
+
+    <!-- NAVIGATION -->
+    <nav class="fixed top-0 w-full bg-white/70 backdrop-blur-md z-[100] border-b border-white/50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="script-font text-2xl">T & T</div>
+            <div class="hidden md:flex gap-8 text-[10px] uppercase tracking-widest font-bold">
+                <a href="#home">Invitation</a>
+                <a href="#rsvp">RSVP</a>
+                <a href="#story">Our Story</a>
+                <a href="#guest-list">Guest List</a>
+                <a href="#gifts">Gifts</a>
+            </div>
+            <a href="#rsvp" class="premium-btn px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest text-center">RSVP</a>
+        </div>
+    </nav>
+
+    <!-- SECTION 1: INVITATION -->
+    <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-32 px-6 text-center">
+        <div data-aos="fade-up">
+            <h1 class="text-6xl md:text-8xl mb-4 leading-tight">
+                <span class="script-font text-[#AF8F6F]">Tapiwa</span> <br class="md:hidden"> 
+                <span class="text-4xl md:text-5xl font-light">&</span> <br class="md:hidden">
+                <span class="script-font text-[#AF8F6F]">Tatenda</span>
+            </h1>
+            <p class="text-lg md:text-xl italic mb-10 max-w-xl mx-auto opacity-80">
+                Together with our families, we invite you to celebrate our wedding.
             </p>
             
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- 1 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/qqHkyHhb/Humble_beginings.jpg" class="w-full h-72 object-cover object-top rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Where it all began: Humble & Hopeful 🕊️</p>
+            <div class="w-72 h-[450px] mx-auto mb-12 rounded-t-full overflow-hidden border-[12px] border-white shadow-2xl">
+                <img src="https://i.postimg.cc/GtncGn8S/Main_Cover_Page.jpg" class="w-full h-full object-cover" alt="Tapiwa & Tatenda">
+            </div>
+
+            <div class="space-y-4 mb-8 px-4">
+                <h2 class="text-2xl md:text-4xl font-light uppercase tracking-widest">Saturday, 26th Dec 2026</h2>
+                <p class="text-xl font-bold text-[#AF8F6F] tracking-wide">11:00 AM SHARP</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Vumba+Gateway+Gardens+Mutare" target="_blank" class="block hover:underline">
+                    <p class="font-bold tracking-[0.2em] text-sm underline underline-offset-4 decoration-[#AF8F6F]">VUMBA GATEWAY GARDENS</p>
+                    <p class="text-[10px] opacity-60 mt-1">Mutare, Zimbabwe (Click for Directions)</p>
+                </a>
+            </div>
+
+            <!-- STYLE GUIDE -->
+            <div class="glass-card max-w-lg mx-auto p-6 rounded-3xl mb-12">
+                <p class="text-[10px] uppercase font-bold tracking-widest mb-4 text-[#604D3F]">Dress Code: Nudes & Greens</p>
+                <div class="flex justify-center gap-2 mb-4">
+                    <span class="swatch" style="background: #F8F1EA;"></span>
+                    <span class="swatch" style="background: #D5BDAF;"></span>
+                    <span class="swatch" style="background: #8A9A5B;"></span>
+                    <span class="swatch" style="background: #2D4F1E;"></span>
                 </div>
-                <!-- 2 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/VvPYnP0w/Varsity_Days.jpg" class="w-full h-72 object-cover object-top rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Varsity Days: Studying for a future together 📚</p>
-                </div>
-                <!-- 3 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/Hn0TtvXh/Fresh_Couple.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">That "New Love" glow ✨</p>
-                </div>
-                <!-- 4 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/SRbyCbY0/Victoria_Falls.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Mosi-oa-Tunya: The Smoke that Thunders (and us!) 🌊</p>
-                </div>
-                <!-- 5 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/ZnzTpzvz/Me_and_You.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Simply Me & You 🤎</p>
-                </div>
-                <!-- 6 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/rs28x20B/Travel_Buddies.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Passport Stamps & Heartbeats ✈️</p>
-                </div>
-                <!-- 7 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/L5FHLFY7/Out_and_About.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Making memories in every corner 📍</p>
-                </div>
-                <!-- 8 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/tJGXWGZD/Dubai.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">City Lights & Dubai Nights 🌃</p>
-                </div>
-                <!-- 9 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/fyQwmQtr/Miracle_Garden.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Blooms and Happiness 🌸</p>
-                </div>
-                <!-- 10 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/Xq6Vd6GL/Dubai_Beach.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Sun-kissed in Dubai 🏖️</p>
-                </div>
-                <!-- 11 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/8cg1MgJt/F1.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Life in the Fast Lane 🏎️</p>
-                </div>
-                <!-- 12 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/prM2zMh4/Sea_Diving.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Diving into our next adventure 🤿</p>
-                </div>
-                <!-- 13 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/vTwQfwgP/Greece.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Greek Island Dreaming 🇬🇷</p>
-                </div>
-                <!-- 14 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/5yWxLWYs/Grande_Familia_Barcelona.jpg" class="w-full h-72 object-contain bg-gray-50 rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Barcelona Cathedral: Architecture and Awe ⛪</p>
-                </div>
-                <!-- 15 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/FzX93XdZ/Dressed_Up.jpg" class="w-full h-72 object-cover object-top rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">A preview of the Elegance to come 🕴️💃</p>
+                <p class="text-xs italic opacity-70 px-4">Formal attire. Please join us in our color palette of earthy nudes and garden greens.</p>
+            </div>
+
+            <div class="flex justify-center gap-4 mb-12">
+                <div class="timer-box"><span id="days" class="block text-2xl font-bold">00</span><span class="text-[8px] uppercase tracking-widest">Days</span></div>
+                <div class="timer-box"><span id="hours" class="block text-2xl font-bold">00</span><span class="text-[8px] uppercase tracking-widest">Hrs</span></div>
+                <div class="timer-box"><span id="mins" class="block text-2xl font-bold">00</span><span class="text-[8px] uppercase tracking-widest">Min</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: RSVP -->
+    <section id="rsvp" class="py-32 px-6 flex flex-col items-center bg-white/30">
+        <div id="rsvp-card" class="max-w-xl w-full glass-card p-10 rounded-[40px] text-center" data-aos="zoom-in">
+            <div id="rsvp-form-container">
+                <h2 class="text-4xl mb-6 font-serif">RSVP</h2>
+                
+                <div class="bg-red-50/50 border border-red-100 p-5 rounded-2xl mb-8 text-left text-red-800">
+                    <p class="text-[10px] font-bold uppercase tracking-widest mb-2">Gate Entry Policy</p>
+                    <p class="text-xs leading-relaxed italic">Please register with your <strong>Official Names</strong>. A guest-list check will be active at the gate. <br><br><strong>Note: No RSVP = $10 Entry Fee.</strong></p>
                 </div>
 
-                <!-- PROPOSAL (THE FINALE) -->
-                <div class="photo-card md:col-start-2 border-2 border-[#AF8F6F]" data-aos="zoom-in">
-                    <img src="https://i.postimg.cc/SRbyCb2P/Proposal.jpg" class="w-full h-80 object-cover rounded">
-                    <p class="mt-4 font-bold text-center uppercase tracking-widest text-sm text-[#AF8F6F]">The best 'YES' ever! 💍</p>
+                <p class="text-[10px] uppercase tracking-widest mb-8 font-bold opacity-60">Please RSVP by 15 May 2026</p>
+                
+                <form id="rsvp-form" action="https://formspree.io/f/mjgpnrvn" method="POST" class="space-y-4 text-left">
+                    <input type="text" name="Name" placeholder="Your Full Name" class="w-full p-5 rounded-2xl bg-white/60 ring-1 ring-black/5 outline-none focus:ring-2 focus:ring-[#AF8F6F]" required>
+                    <div id="plusOnes" class="space-y-4"></div>
+                    <button type="button" onclick="addGuest()" class="w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-[10px] font-bold text-gray-500 hover:bg-white/50 uppercase tracking-widest">+ Add Guest (Up to 9)</button>
+                    <button type="submit" id="submit-btn" class="w-full py-6 premium-btn rounded-2xl font-bold shadow-2xl uppercase tracking-[0.2em] text-xs">Confirm Attendance</button>
+                </form>
+            </div>
+
+            <div id="success-container" class="hidden fade-in">
+                <div class="text-5xl mb-6">🥂</div>
+                <h2 class="text-3xl mb-4 font-serif text-[#AF8F6F]">You're on the list!</h2>
+                <p class="mb-8 italic opacity-70">We can't wait to see you there. Make sure your name matches your ID at the gate.</p>
+                <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Tapiwa+%26+Tatenda%27s+Wedding&dates=20261226T110000/20261226T230000&details=Vumba+Gateway+Gardens,+Mutare&location=Vumba+Gateway+Gardens,+Mutare" target="_blank" class="inline-block py-3 px-8 bg-white rounded-xl text-[10px] font-bold shadow-sm">ADD TO CALENDAR</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: OUR STORY -->
+    <section id="story" class="py-32 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl text-center mb-6" data-aos="fade-up">Our Story</h2>
+            <p class="text-center italic opacity-60 mb-20 max-w-2xl mx-auto" data-aos="fade-up">"Chapters of a life built together."</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/qqHkyHhb/Humble_beginings.jpg" class="w-full h-72 object-cover object-top rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Humble Beginnings 🕊️</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/VvPYnP0w/Varsity_Days.jpg" class="w-full h-72 object-cover object-top rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Varsity Days 📚</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/Hn0TtvXh/Fresh_Couple.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Young Love ✨</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/SRbyCbY0/Victoria_Falls.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">The Falls 🌊</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/ZnzTpzvz/Me_and_You.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Me & You 🤎</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/rs28x20B/Travel_Buddies.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Travel Buddies ✈️</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/L5FHLFY7/Out_and_About.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Exploring together 📍</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/tJGXWGZD/Dubai.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Dubai Nights 🌃</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/fyQwmQtr/Miracle_Garden.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">In Bloom 🌸</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/Xq6Vd6GL/Dubai_Beach.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Sun-kissed 🏖️</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/8cg1MgJt/F1.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">F1 Adventures 🏎️</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/prM2zMh4/Sea_Diving.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Diving Deep 🤿</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/vTwQfwgP/Greece.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Greece 🇬🇷</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/5yWxLWYs/Grande_Familia_Barcelona.jpg" class="w-full h-72 object-contain bg-gray-50 rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Barcelona Cathedral ⛪</p></div>
+                <div class="photo-card" data-aos="fade-up"><img src="https://i.postimg.cc/FzX93XdZ/Dressed_Up.jpg" class="w-full h-72 object-cover object-top rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Dressed to impress 🕴️💃</p></div>
+                <div class="photo-card md:col-start-2 border-2 border-[#AF8F6F]" data-aos="zoom-in"><img src="https://i.postimg.cc/SRbyCb2P/Proposal.jpg" class="w-full h-80 object-cover rounded"><p class="mt-4 font-bold text-center uppercase tracking-widest text-sm text-[#AF8F6F]">The best 'YES' ever! 💍</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: VERIFIED GUEST LIST -->
+    <section id="guest-list" class="py-32 px-6 bg-white/20">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl mb-6 font-serif">Verified Guest List</h2>
+            
+            <!-- Password Gate -->
+            <div id="guest-lock" class="max-w-xs mx-auto">
+                <p class="text-[10px] uppercase font-bold tracking-widest mb-4 opacity-60">Enter Password to View</p>
+                <div class="flex gap-2">
+                    <input type="password" id="guestPass" placeholder="Last 4 digits of UK #" class="w-full p-4 rounded-xl border border-gray-200 text-center outline-none">
+                    <button onclick="unlockList()" class="premium-btn px-6 rounded-xl font-bold">GO</button>
+                </div>
+            </div>
+
+            <!-- The Hidden List -->
+            <div id="guest-content" class="hidden fade-in">
+                <div class="mb-8 max-w-md mx-auto">
+                    <input type="text" id="guestSearch" onkeyup="searchGuests()" placeholder="Search your name..." class="w-full p-4 rounded-xl bg-white border border-gray-200 outline-none text-sm">
+                </div>
+                <div id="list-container" class="grid grid-cols-2 md:grid-cols-3 gap-4 text-left">
+                    <!-- Names injected by JS -->
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- SECTION 4: GIFTS -->
+    <section id="gifts" class="py-32 px-6 bg-[#4A3728] text-[#F8F1EA]">
+        <div class="max-w-5xl mx-auto text-center">
+            <h2 class="text-4xl mb-10 font-serif">Registry</h2>
+            <p class="italic text-lg opacity-80 mb-16 max-w-2xl mx-auto">Your love and presence are the greatest gifts. If you wish to gift us, we have provided our details below.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left">
+                    <h4 class="font-bold text-xs uppercase tracking-widest mb-6 text-[#D5BDAF]">UK Banking</h4>
+                    <p class="font-bold text-xs">TATENDA MUSHAWEMHUKA</p>
+                    <p onclick="copyMe('10387223')" class="text-lg font-bold hover:text-[#D5BDAF] cursor-pointer">Acc: 10387223 <span class="text-[8px] bg-white/10 px-2 py-1 rounded">COPY</span></p>
+                    <p class="text-[10px] mt-2">Sort: 20-26-89</p>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left">
+                    <h4 class="font-bold text-xs uppercase tracking-widest mb-6 text-[#D5BDAF]">EcoCash</h4>
+                    <p class="font-bold text-xs opacity-60">TATENDA MUSHAWEMHUKA</p>
+                    <p onclick="copyMe('+263783234268')" class="text-2xl font-bold cursor-pointer hover:text-[#D5BDAF]">+263 783 234 268</p>
+                </div>
+
+                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 flex flex-col items-center justify-center">
+                    <h4 class="font-bold text-xs uppercase tracking-widest mb-4 text-[#D5BDAF]">Cash Gifts</h4>
+                    <p class="text-xl font-serif">A gift box will be provided at the reception 🎁</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-20 text-center bg-[#4A3728] border-t border-white/5">
+        <button onclick="admin()" class="text-[9px] uppercase tracking-[0.5em] opacity-10 hover:opacity-100 transition-all text-white font-bold">Admin</button>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // 1. GUEST LIST DATA (Add names here!)
+        const guestNames = [
+            "Tapiwa Mushawemhuka", 
+            "Tatenda Mushawemhuka",
+            "Blessing Moyo",
+            "Chipo Nemasango"
+        ];
+
+        function unlockList() {
+            const pass = document.getElementById('guestPass').value;
+            if(pass === "5858") {
+                document.getElementById('guest-lock').classList.add('hidden');
+                document.getElementById('guest-content').classList.remove('hidden');
+                displayGuests();
+            } else {
+                alert("Incorrect password.");
+            }
+        }
+
+        function displayGuests(filter = "") {
+            const container = document.getElementById('list-container');
+            container.innerHTML = "";
+            guestNames.sort().forEach(name => {
+                if (name.toLowerCase().includes(filter.toLowerCase())) {
+                    const div = document.createElement('div');
+                    div.className = "p-3 bg-white/50 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-white/20";
+                    div.innerText = name;
+                    container.appendChild(div);
+                }
+            });
+        }
+
+        function searchGuests() { displayGuests(document.getElementById('guestSearch').value); }
+
+        // RSVP Handler
+        document.getElementById('rsvp-form').addEventListener("submit", async function(event) {
+            event.preventDefault();
+            const btn = document.getElementById('submit-btn');
+            btn.innerText = "SENDING...";
+            const data = new FormData(event.target);
+            fetch(event.target.action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' }})
+            .then(res => {
+                if (res.ok) {
+                    document.getElementById('rsvp-form-container').classList.add('hidden');
+                    document.getElementById('success-container').classList.remove('hidden');
+                }
+            });
+        });
+
+        function addGuest() {
+            const container = document.getElementById('plusOnes');
+            const count = container.children.length + 1;
+            if(count <= 9) {
+                const input = document.createElement('input');
+                input.type = "text"; input.name = `Guest_${count}`; input.placeholder = `Guest ${count} Name`;
+                input.className = "w-full p-5 rounded-2xl bg-white/60 ring-1 ring-black/5 outline-none mb-4";
+                container.appendChild(input);
+            }
+        }
+
+        function copyMe(text) {
+            navigator.clipboard.writeText(text);
+            const toast = document.getElementById('toast');
+            toast.style.display = 'block';
+            setTimeout(() => { toast.style.display = 'none'; }, 2000);
+        }
+
+        function updateTimers() {
+            const weddingDate = new Date("Dec 26, 2026 11:00:00").getTime();
+            const now = new Date().getTime();
+            const dist = weddingDate - now;
+            document.getElementById("days").innerText = Math.floor(dist / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("mins").innerText = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
+        }
+        setInterval(updateTimers, 1000);
+
+        function createPetal() {
+            const symbols = ['🌸', '🍃', '✨'];
+            const petal = document.createElement('div');
+            petal.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
+            petal.className = 'petal';
+            petal.style.left = Math.random() * 100 + 'vw';
+            petal.style.animationDuration = Math.random() * 5 + 5 + 's';
+            document.body.appendChild(petal);
+            setTimeout(() => petal.remove(), 8000);
+        }
+        setInterval(createPetal, 1500);
+
+        function admin() {
+            if(prompt("Admin Password:") === "0086") {
+                window.location.href="https://formspree.io/forms/mjgpnrvn/submissions";
+            }
+        }
+    </script>
+</body>
+</html>
