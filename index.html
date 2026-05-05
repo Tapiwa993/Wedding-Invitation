@@ -10,7 +10,14 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
     <style>
-        :root { --nude-light: #F8F1EA; --nude-mid: #E3D5CA; --nude-dark: #D5BDAF; --accent: #604D3F; }
+        :root { 
+            --nude-light: #F8F1EA; 
+            --nude-mid: #E3D5CA; 
+            --nude-dark: #D5BDAF; 
+            --sage-green: #8A9A5B;
+            --emerald-deep: #2D4F1E;
+            --accent: #604D3F; 
+        }
         body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #F8F1EA 0%, #E3D5CA 100%); color: var(--accent); scroll-behavior: smooth; }
         h1, h2, h3 { font-family: 'Playfair Display', serif; }
         .script-font { font-family: 'Dancing Script', cursive; }
@@ -27,6 +34,8 @@
         
         .timer-box { background: rgba(96, 77, 63, 0.05); padding: 12px; border-radius: 15px; min-width: 70px; }
         
+        .color-swatch { width: 40px; height: 40px; border-radius: 50%; border: 2px solid white; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+
         .copy-toast { 
             position: fixed; bottom: 100px; left: 50%; transform: translateX(-50%); 
             background: #4A3728; color: white; padding: 12px 24px; 
@@ -34,30 +43,29 @@
             font-weight: bold; letter-spacing: 0.1em;
         }
 
-        /* Animation for success message */
         .fade-in { animation: fadeIn 0.5s ease-in forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
     </style>
 </head>
 <body>
 
-    <div id="toast" class="copy-toast uppercase">Details Copied to Clipboard!</div>
+    <div id="toast" class="copy-toast uppercase">Details Copied!</div>
 
     <!-- NAVIGATION -->
     <nav class="fixed top-0 w-full bg-white/70 backdrop-blur-md z-[100] border-b border-white/50">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div class="script-font text-2xl">T & T</div>
             <div class="hidden md:flex gap-8 text-[10px] uppercase tracking-widest font-bold">
-                <a href="#home">Invite</a>
+                <a href="#home">Invitation</a>
+                <a href="#rsvp">RSVP</a>
                 <a href="#story">Our Story</a>
-                <a href="#location">Venue</a>
                 <a href="#gifts">Gifts</a>
             </div>
             <a href="#rsvp" class="premium-btn px-6 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest">RSVP NOW</a>
         </div>
     </nav>
 
-    <!-- PAGE 1: HERO -->
+    <!-- PAGE 1: INVITATION (HERO) -->
     <section id="home" class="min-h-screen flex flex-col items-center justify-center pt-24 px-6 text-center">
         <div data-aos="fade-up">
             <h1 class="text-6xl md:text-8xl mb-4 leading-tight">
@@ -66,7 +74,7 @@
                 <span class="script-font text-[#AF8F6F]">Tatenda</span>
             </h1>
             <p class="text-lg md:text-xl italic mb-10 max-w-xl mx-auto opacity-80">
-                With joyful hearts, we invite you to celebrate our wedding day.
+                Together with our families, we invite you to share in our joy.
             </p>
             
             <div class="w-72 h-[450px] mx-auto mb-12 rounded-t-full overflow-hidden border-[12px] border-white shadow-2xl">
@@ -77,13 +85,22 @@
                 <h2 class="text-2xl md:text-4xl font-light uppercase tracking-widest">
                     Saturday, 26th of December 2026
                 </h2>
-                <p class="text-lg md:text-xl italic opacity-70 max-w-lg mx-auto">
-                    “Join us as we say ‘I do’ and begin our forever.”
-                </p>
+                <p class="text-xl font-bold text-[#AF8F6F]">Program starts promptly at 11:00 AM</p>
                 <p class="font-bold tracking-[0.4em] text-sm mt-4">MUTARE, ZIMBABWE</p>
             </div>
 
-            <!-- WEDDING COUNTDOWN -->
+            <!-- DRESS CODE SECTION -->
+            <div class="glass-card max-w-2xl mx-auto p-8 rounded-3xl mb-12">
+                <h3 class="uppercase tracking-widest text-sm font-bold mb-4">Dress Code: Nudes & Greens</h3>
+                <div class="flex justify-center gap-3 mb-6">
+                    <div class="color-swatch" style="background: #F8F1EA;" title="Light Nude"></div>
+                    <div class="color-swatch" style="background: #D5BDAF;" title="Deep Nude"></div>
+                    <div class="color-swatch" style="background: #8A9A5B;" title="Sage Green"></div>
+                    <div class="color-swatch" style="background: #2D4F1E;" title="Emerald Green"></div>
+                </div>
+                <p class="text-sm italic opacity-80">Think Earthy Elegance. We'd love to see our guests in shades of nude, tan, sage, or deep forest green. Perfect for our Melanin-rich skins!</p>
+            </div>
+
             <div class="flex justify-center gap-4 mb-12">
                 <div class="timer-box"><span id="days" class="block text-2xl font-bold">00</span><span class="text-[8px] uppercase tracking-widest">Days</span></div>
                 <div class="timer-box"><span id="hours" class="block text-2xl font-bold">00</span><span class="text-[8px] uppercase tracking-widest">Hrs</span></div>
@@ -92,222 +109,129 @@
         </div>
     </section>
 
-    <!-- PAGE 2: OUR STORY (ALL 16 PHOTOS) -->
-    <section id="story" class="py-32 px-6 bg-white/40">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-5xl text-center mb-6" data-aos="fade-up">Our Story</h2>
-            <p class="text-center italic opacity-60 mb-20 max-w-2xl mx-auto" data-aos="fade-up">
-                "Our journey began with a simple hello… and grew into a love we can’t wait to celebrate with you."
-            </p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Gallery Item 1 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/qqHkyHhb/Humble_beginings.jpg" class="w-full h-72 object-cover object-top rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Humble Beginnings</p>
-                </div>
-                <!-- Gallery Item 2 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/VvPYnP0w/Varsity_Days.jpg" class="w-full h-72 object-cover object-top rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Varsity Days & Big Dreams</p>
-                </div>
-                <!-- Gallery Item 3 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/Hn0TtvXh/Fresh_Couple.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">The Fresh Couple</p>
-                </div>
-                <!-- Gallery Item 4 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/SRbyCbY0/Victoria_Falls.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Victoria Falls Adventures</p>
-                </div>
-                <!-- Gallery Item 5 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/ZnzTpzvz/Me_and_You.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Me & You</p>
-                </div>
-                <!-- Gallery Item 6 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/rs28x20B/Travel_Buddies.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Travel Buddies for Life</p>
-                </div>
-                <!-- Gallery Item 7 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/L5FHLFY7/Out_and_About.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Out & About</p>
-                </div>
-                <!-- Gallery Item 8 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/tJGXWGZD/Dubai.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Streets of Dubai</p>
-                </div>
-                <!-- Gallery Item 9 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/fyQwmQtr/Miracle_Garden.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Miracle Garden Moments</p>
-                </div>
-                <!-- Gallery Item 10 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/Xq6Vd6GL/Dubai_Beach.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Dubai Beach Sunsets</p>
-                </div>
-                <!-- Gallery Item 11 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/8cg1MgJt/F1.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Raceday at the F1</p>
-                </div>
-                <!-- Gallery Item 12 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/prM2zMh4/Sea_Diving.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Diving into the Deep End</p>
-                </div>
-                <!-- Gallery Item 13 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/vTwQfwgP/Greece.jpg" class="w-full h-72 object-cover rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Greece Memories</p>
-                </div>
-                <!-- Gallery Item 14 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/5yWxLWYs/Grande_Familia_Barcelona.jpg" class="w-full h-72 object-contain bg-gray-50 rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">Barcelona: Sagrada Família</p>
-                </div>
-                <!-- Gallery Item 15 -->
-                <div class="photo-card" data-aos="fade-up">
-                    <img src="https://i.postimg.cc/FzX93XdZ/Dressed_Up.jpg" class="w-full h-72 object-cover object-top rounded">
-                    <p class="mt-3 text-xs italic text-center opacity-60">All Dressed Up</p>
-                </div>
-
-                <!-- PROPOSAL (THE FINAL ONE) -->
-                <div class="photo-card md:col-start-2 border-2 border-[#AF8F6F]" data-aos="zoom-in">
-                    <img src="https://i.postimg.cc/SRbyCb2P/Proposal.jpg" class="w-full h-80 object-cover rounded">
-                    <p class="mt-4 font-bold text-center uppercase tracking-widest text-sm text-[#AF8F6F]">She said YES!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP PAGE -->
-    <section id="rsvp" class="py-32 px-6 flex flex-col items-center">
+    <!-- PAGE 2: RSVP -->
+    <section id="rsvp" class="py-32 px-6 flex flex-col items-center bg-white/20">
         <div id="rsvp-card" class="max-w-xl w-full glass-card p-12 rounded-[40px] text-center" data-aos="zoom-in">
-            
-            <!-- FORM AREA -->
             <div id="rsvp-form-container">
-                <h2 class="text-4xl mb-6 font-serif">RSVP</h2>
+                <h2 class="text-4xl mb-4 font-serif">RSVP</h2>
                 
+                <!-- IMPORTANT NOTICES -->
+                <div class="bg-red-50 border border-red-100 p-4 rounded-2xl mb-8">
+                    <p class="text-[11px] text-red-800 font-bold uppercase tracking-wider mb-2">⚠️ Important Entry Information</p>
+                    <p class="text-xs text-red-700 italic">Please use your legal names. There will be a mandatory sign-in at the entry. Guests not on the RSVP list will be required to pay a <b>$10 entry fee</b>.</p>
+                </div>
+
                 <div class="bg-white/50 inline-block px-6 py-3 rounded-2xl mb-8 border border-white">
-                    <p class="text-[10px] uppercase font-bold tracking-[0.2em] mb-1 opacity-60">Response Deadline Countdown</p>
+                    <p class="text-[10px] uppercase font-bold tracking-[0.2em] mb-1 opacity-60">Response Deadline</p>
                     <div id="rsvp-timer" class="text-xl font-bold text-[#AF8F6F]">--:--:--:--</div>
                 </div>
-
-                <p class="text-[10px] uppercase tracking-widest mb-10 font-bold opacity-80">Kindly confirm your attendance by 15 May 2026</p>
                 
                 <form id="rsvp-form" action="https://formspree.io/f/mjgpnrvn" method="POST" class="space-y-6 text-left">
-                    <input type="text" name="Name" placeholder="Your Full Name" class="w-full p-5 rounded-2xl bg-white/60 border-none ring-1 ring-black/5 focus:ring-2 focus:ring-[#AF8F6F] outline-none" required>
+                    <input type="text" name="Name" placeholder="Your Full Name (As it appears on ID)" class="w-full p-5 rounded-2xl bg-white/60 border-none ring-1 ring-black/5 focus:ring-2 focus:ring-[#AF8F6F] outline-none" required>
                     <div id="plusOnes" class="space-y-4"></div>
                     <button type="button" onclick="addGuest()" class="w-full py-4 border-2 border-dashed border-gray-300 rounded-2xl text-[10px] font-bold text-gray-500 hover:bg-white/50 uppercase tracking-widest">+ Add Guest (Up to 9)</button>
                     <button type="submit" id="submit-btn" class="w-full py-6 premium-btn rounded-2xl font-bold shadow-2xl uppercase tracking-[0.2em] text-xs">Confirm My Attendance</button>
                 </form>
             </div>
 
-            <!-- SUCCESS AREA (Hidden by default) -->
             <div id="success-container" class="hidden fade-in">
                 <div class="text-5xl mb-6">🍾</div>
-                <h2 class="text-3xl mb-4 font-serif text-[#AF8F6F]">Thank you for confirming!</h2>
-                <p class="mb-8 italic opacity-70">We are so excited to have you join us in Mutare.</p>
+                <h2 class="text-3xl mb-4 font-serif text-[#AF8F6F]">You're on the list!</h2>
+                <p class="mb-8 italic opacity-70">We can't wait to see you in Mutare. Please remember the name you registered with for entry.</p>
                 
-                <!-- Calendar Section -->
                 <div class="bg-white/40 p-6 rounded-3xl border border-white/60 mb-8">
                     <p class="text-[10px] uppercase font-bold tracking-widest mb-4">Add to Calendar</p>
-                    <div class="grid grid-cols-1 gap-3">
-                        <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Tapiwa+%26+Tatenda%27s+Wedding&dates=20261226T140000Z/20261227T020000Z&details=We+can%27t+wait+to+celebrate+with+you!&location=Mutare,+Zimbabwe" target="_blank" class="py-3 bg-white rounded-xl text-[10px] font-bold shadow-sm hover:shadow-md transition-all">GOOGLE CALENDAR</a>
-                        <a href="https://outlook.live.com/calendar/0/deeplink/compose?path=/calendar/action/compose&rru=addevent&subject=Tapiwa+%26+Tatenda%27s+Wedding&startdt=2026-12-26T14:00:00&enddt=2026-12-27T02:00:00&body=Celebrate+with+us!&location=Mutare,+Zimbabwe" target="_blank" class="py-3 bg-white rounded-xl text-[10px] font-bold shadow-sm hover:shadow-md transition-all">OUTLOOK / APPLE</a>
-                    </div>
-                </div>
-
-                <!-- Optional Email for Invite -->
-                <div class="pt-6 border-t border-white/50">
-                    <p class="text-[10px] opacity-60 mb-4 italic uppercase tracking-wider font-bold">Want an invite reminder?</p>
-                    <form action="https://formspree.io/f/mjgpnrvn" method="POST" class="flex gap-2">
-                        <input type="email" name="Mailing_List_Email" placeholder="Enter Email" class="flex-1 p-3 rounded-xl bg-white/60 text-xs border-none outline-none ring-1 ring-black/5">
-                        <button type="submit" class="px-4 py-3 bg-[#AF8F6F] text-white rounded-xl text-[10px] font-bold">SEND</button>
-                    </form>
+                    <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Tapiwa+%26+Tatenda%27s+Wedding&dates=20261226T090000Z/20261226T220000Z&details=Please+arrive+by+11:00+AM!&location=Mutare,+Zimbabwe" target="_blank" class="block py-3 bg-white rounded-xl text-[10px] font-bold shadow-sm mb-3">GOOGLE CALENDAR</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- VENUE PAGE -->
-    <section id="location" class="py-32 px-6 text-center">
-        <h2 class="text-4xl mb-12">The Venue</h2>
-        <div class="w-full max-w-5xl mx-auto h-[500px] rounded-[2rem] overflow-hidden shadow-2xl border-[10px] border-white" data-aos="fade-up">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120306.90483838385!2d32.59367588392157!3d-18.9711894474753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x192d6e04d412e8c5%3A0xc3b8392764952011!2sMutare%2C%20Zimbabwe!5e0!3m2!1sen!2sus!4v1715874000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <!-- PAGE 3: OUR STORY -->
+    <section id="story" class="py-32 px-6 bg-white/40">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-5xl text-center mb-6" data-aos="fade-up">Our Story</h2>
+            <p class="text-center italic opacity-60 mb-20 max-w-2xl mx-auto" data-aos="fade-up">
+                "From a simple 'Hello' to 'I Do'—here’s a glimpse into our favorite chapters."
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="photo-card" data-aos="fade-up">
+                    <img src="https://i.postimg.cc/qqHkyHhb/Humble_beginings.jpg" class="w-full h-72 object-cover object-top rounded">
+                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Where the magic began 🕊️</p>
+                </div>
+                <div class="photo-card" data-aos="fade-up">
+                    <img src="https://i.postimg.cc/VvPYnP0w/Varsity_Days.jpg" class="w-full h-72 object-cover object-top rounded">
+                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Study dates & Big dreams 📚</p>
+                </div>
+                <div class="photo-card" data-aos="fade-up">
+                    <img src="https://i.postimg.cc/Hn0TtvXh/Fresh_Couple.jpg" class="w-full h-72 object-cover rounded">
+                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Young, wild, and in love ✨</p>
+                </div>
+                <div class="photo-card" data-aos="fade-up">
+                    <img src="https://i.postimg.cc/SRbyCbY0/Victoria_Falls.jpg" class="w-full h-72 object-cover rounded">
+                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Mosi-oa-Tunya adventures 🌊</p>
+                </div>
+                <div class="photo-card" data-aos="fade-up">
+                    <img src="https://i.postimg.cc/tJGXWGZD/Dubai.jpg" class="w-full h-72 object-cover rounded">
+                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Chasing city lights in Dubai 🏙️</p>
+                </div>
+                <div class="photo-card" data-aos="fade-up">
+                    <img src="https://i.postimg.cc/5yWxLWYs/Grande_Familia_Barcelona.jpg" class="w-full h-72 object-contain bg-gray-50 rounded">
+                    <p class="mt-3 text-xs italic text-center opacity-80 font-semibold">Barcelona Cathedral: Lost in history ⛪</p>
+                </div>
+
+                <!-- PROPOSAL -->
+                <div class="photo-card md:col-start-2 border-2 border-[#AF8F6F]" data-aos="zoom-in">
+                    <img src="https://i.postimg.cc/SRbyCb2P/Proposal.jpg" class="w-full h-80 object-cover rounded">
+                    <p class="mt-4 font-bold text-center uppercase tracking-widest text-sm text-[#AF8F6F]">The best 'Yes' of my life! 💍</p>
+                </div>
+            </div>
         </div>
-        <p class="mt-8 text-lg italic opacity-60">Mutare, Zimbabwe</p>
     </section>
 
-    <!-- GIFTS PAGE -->
+    <!-- PAGE 4: GIFTS -->
     <section id="gifts" class="py-32 px-6 bg-[#4A3728] text-[#F8F1EA]">
         <div class="max-w-5xl mx-auto text-center">
             <h2 class="text-4xl mb-10 font-serif text-[#F8F1EA]">Gifts</h2>
             <p class="italic text-lg opacity-80 mb-16 max-w-2xl mx-auto">
-                "Your presence at our wedding is the greatest gift of all. However, if you wish to honor us with a gift, a contribution to our 'New Adventure Fund' would help us kickstart our life together."
+                "Your presence is our present. But if you wish to help us settle into our new life, a contribution to our fund would be deeply appreciated."
             </p>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- BANKING -->
-                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left relative overflow-hidden" data-aos="fade-right">
+                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left relative overflow-hidden">
                     <h4 class="font-bold text-xs uppercase tracking-widest mb-6 text-[#D5BDAF]">Banking Details</h4>
                     <div class="space-y-4 text-xs">
-                        <div>
-                            <p class="opacity-40 uppercase tracking-tighter mb-1">Account Holder</p>
-                            <p class="font-bold">TATENDA MUSHAWEMHUKA</p>
-                        </div>
-                        <div class="cursor-pointer group" onclick="copyMe('10387223')">
-                            <p class="opacity-40 uppercase tracking-tighter mb-1">Account Number (Tap to Copy)</p>
-                            <p class="font-bold text-lg group-hover:text-[#D5BDAF]">10387223 <span class="text-[8px] bg-white/10 px-2 py-1 rounded ml-2">COPY</span></p>
-                        </div>
-                        <div>
-                            <p class="opacity-40 uppercase tracking-tighter mb-1">Sort Code</p>
-                            <p class="font-bold">20-26-89</p>
-                        </div>
-                        <div class="cursor-pointer group" onclick="copyMe('GB55BUKB20268910387223')">
-                            <p class="opacity-40 uppercase tracking-tighter mb-1">IBAN (Tap to Copy)</p>
-                            <p class="font-bold text-[10px] break-all group-hover:text-[#D5BDAF]">GB55BUKB20268910387223</p>
-                        </div>
-                        <div>
-                            <p class="opacity-40 uppercase tracking-tighter mb-1">SWIFT/BIC</p>
-                            <p class="font-bold">BUKBGB22</p>
-                        </div>
+                        <p class="font-bold">TATENDA MUSHAWEMHUKA</p>
+                        <p onclick="copyMe('10387223')" class="cursor-pointer font-bold text-lg hover:text-[#D5BDAF]">Acc: 10387223 <small>(Copy)</small></p>
+                        <p>Sort: 20-26-89</p>
                     </div>
                 </div>
 
                 <!-- ECOCASH -->
-                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left flex flex-col justify-between" data-aos="fade-up">
-                    <div>
-                        <h4 class="font-bold text-xs uppercase tracking-widest mb-6 text-[#D5BDAF]">EcoCash</h4>
-                        <p class="font-bold text-sm mb-2 opacity-60">TATENDA MUSHAWEMHUKA</p>
-                        <p onclick="copyMe('+263783234268')" class="text-2xl font-bold cursor-pointer hover:text-[#D5BDAF] tracking-tighter">+263 783 234 268</p>
-                    </div>
-                    <p class="text-[8px] opacity-30 italic mt-6 uppercase tracking-widest">Tap number to copy</p>
+                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left">
+                    <h4 class="font-bold text-xs uppercase tracking-widest mb-6 text-[#D5BDAF]">EcoCash</h4>
+                    <p class="font-bold text-sm mb-2 opacity-60">TATENDA MUSHAWEMHUKA</p>
+                    <p onclick="copyMe('+263783234268')" class="text-2xl font-bold cursor-pointer hover:text-[#D5BDAF] tracking-tighter">+263 783 234 268</p>
                 </div>
 
                 <!-- CASH -->
-                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 flex flex-col items-center justify-center" data-aos="fade-left">
+                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 flex flex-col items-center justify-center">
                     <h4 class="font-bold text-xs uppercase tracking-widest mb-4 text-[#D5BDAF]">Cash Gifts</h4>
-                    <p class="text-xl font-serif mb-2">At the venue</p>
-                    <div class="w-12 h-12 bg-white/10 rounded-full flex items-center justify-center text-xl">🎁</div>
-                    <p class="text-[10px] opacity-40 italic mt-4 uppercase tracking-tighter text-center">A gift box will be available at the reception</p>
+                    <p class="text-xl font-serif mb-2">At the Venue 🎁</p>
+                    <p class="text-[10px] opacity-40 italic text-center">A gift box will be available at the reception</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ADMIN FOOTER -->
-    <footer class="py-20 text-center bg-[#4A3728]">
-        <button onclick="admin()" class="text-[9px] uppercase tracking-[0.5em] opacity-10 hover:opacity-100 transition-all text-white font-bold">Admin Access</button>
+    <!-- FOOTER -->
+    <footer class="py-10 text-center bg-[#4A3728] border-t border-white/5">
+        <p class="text-white/20 text-[10px] uppercase tracking-widest mb-4">Tapiwa & Tatenda 2026</p>
+        <button onclick="admin()" class="text-[9px] uppercase tracking-[0.5em] opacity-10 hover:opacity-100 transition-all text-white font-bold">Admin</button>
     </footer>
 
-    <!-- EXTERNAL SCRIPTS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
@@ -317,7 +241,7 @@
         rsvpForm.addEventListener("submit", async function(event) {
             event.preventDefault();
             const btn = document.getElementById('submit-btn');
-            btn.innerText = "SENDING...";
+            btn.innerText = "PROCESSING...";
             btn.disabled = true;
 
             const data = new FormData(event.target);
@@ -330,34 +254,22 @@
                     document.getElementById('rsvp-form-container').classList.add('hidden');
                     document.getElementById('success-container').classList.remove('hidden');
                 } else {
-                    alert("Error sending RSVP. Please try again.");
+                    alert("Error. Please try again.");
                     btn.innerText = "CONFIRM MY ATTENDANCE";
                     btn.disabled = false;
                 }
-            }).catch(error => {
-                alert("Error sending RSVP. Please try again.");
-                btn.innerText = "CONFIRM MY ATTENDANCE";
-                btn.disabled = false;
             });
         });
 
-        // CLICK TO COPY FUNCTION
         function copyMe(text) {
-            const el = document.createElement('textarea');
-            el.value = text;
-            document.body.appendChild(el);
-            el.select();
-            document.execCommand('copy');
-            document.body.removeChild(el);
-            
+            navigator.clipboard.writeText(text);
             const toast = document.getElementById('toast');
             toast.style.display = 'block';
             setTimeout(() => { toast.style.display = 'none'; }, 2000);
         }
 
-        // FLOATING ROSES & HEARTS
         function createPetal() {
-            const symbols = ['🌸', '❤', '✿', '❣'];
+            const symbols = ['🌸', '❤', '🌿'];
             const petal = document.createElement('div');
             petal.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
             petal.className = 'petal';
@@ -367,11 +279,10 @@
             document.body.appendChild(petal);
             setTimeout(() => petal.remove(), 8000);
         }
-        setInterval(createPetal, 1200);
+        setInterval(createPetal, 1500);
 
-        // LIVE COUNTDOWN TIMERS
         function updateTimers() {
-            const weddingDate = new Date("Dec 26, 2026 14:00:00").getTime();
+            const weddingDate = new Date("Dec 26, 2026 11:00:00").getTime();
             const rsvpDate = new Date("May 15, 2026 23:59:59").getTime();
             const now = new Date().getTime();
 
@@ -398,14 +309,14 @@
                 const input = document.createElement('input');
                 input.type = "text"; 
                 input.name = `Guest_${gCount}`; 
-                input.placeholder = `Guest ${gCount} Full Name`;
+                input.placeholder = `Guest ${gCount} Legal Name`;
                 input.className = "w-full p-5 rounded-2xl bg-white/60 ring-1 ring-black/5 outline-none mb-4";
                 document.getElementById('plusOnes').appendChild(input);
             }
         }
 
         function admin() {
-            if(prompt("Enter Admin Password:") === "0086") {
+            if(prompt("Admin Password:") === "0086") {
                 window.location.href="https://formspree.io/forms/mjgpnrvn/submissions";
             }
         }
