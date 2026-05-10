@@ -13,7 +13,7 @@
         :root { 
             --nude-light: #FBF7F0; 
             --champagne: #F1E4D3; 
-            --sage-green: #8DA399; /* The touch of green */
+            --sage-green: #8DA399;
             --mocha: #5D4037; 
             --nude-dark: #D5BDAF;
         }
@@ -144,23 +144,22 @@
     <!-- SECTION 3: GUEST LIST -->
     <section id="guest-list" class="py-32 px-6">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl mb-4 font-serif">Verified Guest List</h2>
+            <h2 class="text-4xl mb-4 font-serif text-[#5D4037]">Verified Guest List</h2>
             
             <div class="mb-10 max-w-lg mx-auto">
-                <p class="text-[10px] uppercase font-bold tracking-widest text-[#8DA399] bg-white/40 inline-block px-4 py-2 rounded-full">
-                    Updated every Sunday
+                <p class="text-[10px] uppercase font-bold tracking-widest text-[#2D5A27] bg-[#E8F5E9] inline-block px-4 py-2 rounded-full border border-[#C8E6C9]">
+                    Updated Weekly on Sundays
                 </p>
-                <p class="text-xs italic opacity-60 mt-3">
-                    If you don't see your name yet, please check back next Monday!
+                <p class="text-xs italic opacity-80 mt-4 px-6 text-[#5D4037]">
+                    Don’t worry if your name doesn’t appear here yet, the list is updated every Sunday so please check back the following Monday.
                 </p>
             </div>
             
-            <div id="guest-lock" class="max-w-xs mx-auto glass-card p-8 rounded-3xl">
-                <p class="text-[10px] uppercase font-bold tracking-widest mb-4 opacity-60">Enter Password</p>
-                <p class="text-[9px] mb-4 italic text-[#8DA399]">Hint: Last 4 digits of Tapiwa's UK number</p>
-                <div class="flex flex-col gap-2">
-                    <input type="password" id="guestPass" placeholder="••••" class="w-full p-4 rounded-xl border border-gray-200 text-center outline-none">
-                    <button onclick="unlockList()" class="premium-btn py-4 rounded-xl font-bold text-[10px] uppercase tracking-widest">View List</button>
+            <div id="guest-lock" class="max-w-md mx-auto glass-card p-10 rounded-[3rem]">
+                <p class="text-[10px] uppercase font-bold tracking-[0.2em] mb-6 text-[#8DA399]">Last 4 digits of Tapiwa's UK Phone #</p>
+                <div class="flex flex-col gap-3">
+                    <input type="password" id="guestPass" placeholder="Enter Password" class="w-full p-5 rounded-2xl bg-white border-none ring-1 ring-black/5 text-center outline-none focus:ring-2 focus:ring-[#8DA399] transition-all">
+                    <button onclick="unlockList()" class="premium-btn py-5 rounded-2xl font-bold text-xs uppercase tracking-widest">Verify Access</button>
                 </div>
             </div>
 
@@ -180,7 +179,6 @@
             <p class="text-center italic opacity-60 mb-20 max-w-2xl mx-auto" data-aos="fade-up">"Chapters of a life built together."</p>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Restored AOS Animations for the Story Cards -->
                 <div class="photo-card" data-aos="fade-right" data-aos-delay="100"><img src="https://i.postimg.cc/qqHkyHhb/Humble_beginings.jpg" class="w-full h-72 object-cover object-top rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Humble Beginnings 🕊️</p></div>
                 <div class="photo-card" data-aos="zoom-in" data-aos-delay="200"><img src="https://i.postimg.cc/VvPYnP0w/Varsity_Days.jpg" class="w-full h-72 object-cover object-top rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Varsity Days 📚</p></div>
                 <div class="photo-card" data-aos="fade-left" data-aos-delay="300"><img src="https://i.postimg.cc/Hn0TtvXh/Fresh_Couple.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Young Love ✨</p></div>
@@ -194,168 +192,5 @@
                 <div class="photo-card" data-aos="fade-left"><img src="https://i.postimg.cc/fyQwmQtr/Miracle_Garden.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">In Bloom 🌸</p></div>
                 
                 <div class="photo-card" data-aos="fade-right"><img src="https://i.postimg.cc/Xq6Vd6GL/Dubai_Beach.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Sun-kissed 🏖️</p></div>
-                <div class="photo-card" data-aos="zoom-in"><img src="https://i.postimg.cc/8cg1MgJt/F1.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">F1 Adventures 🏎️</p></div>
-                <div class="photo-card" data-aos="fade-left"><img src="https://i.postimg.cc/prM2zMh4/Sea_Diving.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Diving Deep 🤿</p></div>
-                
-                <div class="photo-card" data-aos="fade-right"><img src="https://i.postimg.cc/vTwQfwgP/Greece.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Greece 🇬🇷</p></div>
-                <div class="photo-card" data-aos="zoom-in"><img src="https://i.postimg.cc/5yWxLWYs/Grande_Familia_Barcelona.jpg" class="w-full h-72 object-contain bg-gray-50 rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Barcelona Cathedral ⛪</p></div>
-                <div class="photo-card" data-aos="fade-left"><img src="https://i.postimg.cc/FzX93XdZ/Dressed_Up.jpg" class="w-full h-72 object-cover object-top rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Dressed to impress 🕴️💃</p></div>
-                
-                <div class="photo-card md:col-start-2 border-2 border-[#AF8F6F]" data-aos="zoom-out-up" data-aos-duration="1500"><img src="https://i.postimg.cc/SRbyCb2P/Proposal.jpg" class="w-full h-80 object-cover rounded"><p class="mt-4 font-bold text-center uppercase tracking-widest text-sm text-[#AF8F6F]">The best 'YES' ever! 💍</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECTION 5: GIFTS -->
-    <section id="gifts" class="py-32 px-6 bg-[#5D4037] text-[#FBF7F0]">
-        <div class="max-w-5xl mx-auto text-center">
-            <h2 class="text-4xl mb-10 font-serif text-[#F1E4D3]">Registry</h2>
-            <p class="italic text-lg opacity-80 mb-16 max-w-2xl mx-auto">Your presence is our greatest gift. Should you wish to honor us with a gift, details are provided below.</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left">
-                    <h4 class="font-bold text-xs uppercase tracking-widest mb-6 text-[#D5BDAF]">UK Banking</h4>
-                    <p class="font-bold text-xs">TATENDA MUSHAWEMHUKA</p>
-                    <p onclick="copyMe('10387223')" class="text-lg font-bold hover:text-[#8DA399] cursor-pointer">Acc: 10387223 <span class="text-[8px] bg-white/10 px-2 py-1 rounded">COPY</span></p>
-                    <p class="text-[10px] mt-2">Sort: 20-26-89</p>
-                </div>
-
-                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 text-left">
-                    <h4 class="font-bold text-xs uppercase tracking-widest mb-6 text-[#D5BDAF]">EcoCash</h4>
-                    <p class="font-bold text-xs opacity-60">TATENDA MUSHAWEMHUKA</p>
-                    <p onclick="copyMe('+263783234268')" class="text-2xl font-bold cursor-pointer hover:text-[#8DA399] tracking-tighter">+263 783 234 268</p>
-                </div>
-
-                <div class="bg-white/5 p-8 rounded-[2rem] border border-white/10 flex flex-col items-center justify-center">
-                    <h4 class="font-bold text-xs uppercase tracking-widest mb-4 text-[#D5BDAF]">Gift Box</h4>
-                    <p class="text-xl font-serif">A gift box will be available at the reception 🎁</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="py-20 text-center bg-[#5D4037] border-t border-white/5">
-        <button onclick="admin()" class="text-[9px] uppercase tracking-[0.5em] opacity-10 hover:opacity-100 transition-all text-white font-bold">Dashboard</button>
-    </footer>
-
-    <!-- SCRIPTS -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-
-        const guestNames = [
-            "Acknowledge Matondo", "Admire mushawemhuka", "Agatha Makumbe", "Amkele Gobinca", "Anchor Tagara", "Annie Mpofu", "Ashleigh Katinhimure", 
-            "Barbara Gudza", "Blessed Panashe Tagara", "Blessing A Manyengavanaa", "Blessing Chirewa", "Caroline Mupingo", "Caroline Muvhiiwa", 
-            "Chengetai Gudza", "Chiedza Gudza", "Chikovore Tinashe", "Chipo Vuta hwarova", "Constance Masisimani", "David Marange", 
-            "Desmond Farai Makadzange", "Dickson Farai Maposa", "Dorothy Mpofu CA(Z)", "Ella Mafa", "Emmanuella Zoey", "Emmill Mallony Marange", 
-            "Ethan Gondo", "Florence Kanhukamwe", "Florence Makumbe", "Fungai Chitiki", "Gloria Gudza Pahwaringira", "Harmphry Mutudza", 
-            "Hellen Chengeta", "Herbert Masisimani", "Innocent Manhimanzi", "Jadah Nechironga", "Jairos Hatinahama Tagara", "John Farai Tagara", 
-            "Joseline Mupingo", "Joshua Bhene", "Kudzai Choga", "Lael Maposa", "Laura Mapanda", "LD Gudza", "Leobest Musakaruka", 
-            "Leonard Muyambo", "Levant Muchenje", "Liam Maposa", "Liam Mupingo", "Linda Manhimanzi", "Loice p Buza", "Lolo", 
-            "Lothando Mupingo", "Lucinda Nyasha Chengeta", "Lynn Rutendo Mutsvikiri", "Lyold Tonderai Dziike", "Lyson", 
-            "Magdeline Chiedza Tagara", "Makanaka Manhivi", "Malven Mubaiwa", "Manhivi Hardlife", "Manhivi Nenyasha", "Manhivi Patience", 
-            "Marilyn Chitengu", "Marimi Paul", "Marimi Tapiwa", "Mashoko Vongai", "Matipaishe makumbe", "Max Chirewa", 
-            "Mercy Chikovore - Mapfumo", "Mitchel Muchenje", "More", "Moreblesssing Chikovore", "Mrs C.Bhene", "Mukudzei Chengeta", 
-            "Munenyasha lesly hama", "Murangwa Mrs", "Nago Chigwende", "Nancy Muyambo", "Naomi Ngulube", "Natalia Mufumisi", 
-            "Nelson Gudza", "Nhlalenhle", "Nothando Lunga", "Nyasha Kadyaridzire", "Nyasha Mupoperi", "Nygel Tate da Munyama", 
-            "OM Gudza", "Owen Mupisiri", "Patience Muyambo", "Praise Chitiki", "Prince Nechironga", "Priscilla Maposa", 
-            "Privilege Kusembedzera", "Prudence Tagara", "Raymond Munyama", "Renias Sangoya", "Rodney Mupingo", "Romeo Mupingo", 
-            "Rose", "Rosey Mpofu", "Rufaro Mupoperi", "Rumbidzai Mawunga", "Rumbidzai Rusere", "Rumbidzai Sangoya", "Runako Chiteka", 
-            "Rutendo Natasha Bhene", "Ruth Mupoperi", "Ryan Katinhimure", "Ryan Tinotenda Munyama", "Samuel Dube", "Sandra Munyama", 
-            "Shaddy Chawira", "Shamiso Dozva", "Shelton Chipura", "Simbarashe Gudzs", "Stanley murangwa", "Tadiwa Mupingo", 
-            "Tadiwa murangwa", "Tadiwanashe Buza Chirara", "Tadiwanashe Gudza", "Takudzwa Mupingo", "Takudzwa Reward Munganjo", 
-            "Tamuka lewis mushinyi", "Tamupiwa s murangwa", "Tanaka Chipura", "Tanatswa murangwa", "Tapiwa", "Tapiwa Mujere", 
-            "Tatenda", "Tatenda Manyudza", "Tawanda Kusembedzera", "Tendai Kusembedzera (Mom)", "Thuso Kuali/Papin Miruho", 
-            "Tinovongashe Jetinar Gondo", "Tobias Pahwaringira", "Tsitsi Chirewa", "Tutsirai murangwa", "Valour Chikovore", 
-            "View Chikovore", "Virtue Chikovore", "Vivian Tariro Munyama", "Walter Masaka", "Washington Munashe Jimu", 
-            "Yolanda Phiri (my gf)", "Zarina Masaka", "Zayne Chipura", "Zuva Chipura"
-        ];
-
-        function unlockList() {
-            const pass = document.getElementById('guestPass').value;
-            if(pass === "5858") {
-                document.getElementById('guest-lock').classList.add('hidden');
-                document.getElementById('guest-content').classList.remove('hidden');
-                displayGuests();
-            } else {
-                alert("Incorrect password. Please try again.");
-            }
-        }
-
-        function displayGuests(filter = "") {
-            const container = document.getElementById('list-container');
-            container.innerHTML = "";
-            guestNames.sort().forEach(name => {
-                if (name.toLowerCase().includes(filter.toLowerCase())) {
-                    const div = document.createElement('div');
-                    div.className = "p-3 bg-white/50 rounded-lg text-[10px] font-bold uppercase tracking-wider border border-white/20";
-                    div.innerText = name;
-                    container.appendChild(div);
-                }
-            });
-        }
-        function searchGuests() { displayGuests(document.getElementById('guestSearch').value); }
-
-        document.getElementById('rsvp-form').addEventListener("submit", async function(event) {
-            event.preventDefault();
-            const btn = document.getElementById('submit-btn');
-            btn.innerText = "PROCESSING...";
-            btn.disabled = true;
-            fetch(event.target.action, { method: 'POST', body: new FormData(event.target), headers: { 'Accept': 'application/json' }})
-            .then(res => {
-                if (res.ok) {
-                    document.getElementById('rsvp-form-container').classList.add('hidden');
-                    document.getElementById('success-container').classList.remove('hidden');
-                }
-            });
-        });
-
-        function addGuest() {
-            const container = document.getElementById('plusOnes');
-            const count = container.children.length + 1;
-            if(count <= 9) {
-                const input = document.createElement('input');
-                input.type = "text"; input.name = `Guest_${count}`; input.placeholder = `Guest ${count} Full Name`;
-                input.className = "w-full p-5 rounded-2xl bg-white/60 ring-1 ring-black/5 outline-none mb-4";
-                container.appendChild(input);
-            }
-        }
-
-        function copyMe(text) {
-            navigator.clipboard.writeText(text);
-            const toast = document.getElementById('toast');
-            toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 2000);
-        }
-
-        function updateTimers() {
-            const weddingDate = new Date("Dec 26, 2026 10:00:00").getTime();
-            const now = new Date().getTime();
-            const dist = weddingDate - now;
-            document.getElementById("days").innerText = Math.floor(dist / (1000 * 60 * 60 * 24));
-            document.getElementById("hours").innerText = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            document.getElementById("mins").innerText = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60));
-        }
-        setInterval(updateTimers, 1000);
-
-        function createPetal() {
-            const symbols = ['🌸', '✨'];
-            const petal = document.createElement('div');
-            petal.innerHTML = symbols[Math.floor(Math.random() * symbols.length)];
-            petal.className = 'petal';
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = Math.random() * 5 + 5 + 's';
-            petal.style.opacity = Math.random();
-            document.body.appendChild(petal);
-            setTimeout(() => petal.remove(), 8000);
-        }
-        setInterval(createPetal, 1500);
-
-        function admin() {
-            if(prompt("Admin access code:") === "0086") {
-                window.location.href="https://formspree.io/forms/mjgpnrvn/submissions";
-            }
-        }
-    </script>
-</body>
-</html>
+                <div class="photo-card" data-aos="zoom-in"><img src="https://i.postimg.cc/8cg1MgJt/F1.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text-xs italic text-center opacity-60 font-semibold">Raceday at the F1 🏎️</p></div>
+                <div class="photo-card" data-aos="fade-left"><img src="https://i.postimg.cc/prM2zMh4/Sea_Diving.jpg" class="w-full h-72 object-cover rounded"><p class="mt-3 text
